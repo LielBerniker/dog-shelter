@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import DogList from './components/DogList';
+import DogDetail from './components/DogDetails';
+import AddDog from './components/AddDog';
+import EditDog from './components/EditDog'; // Import the EditDog component
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Routes>
+                <Route path="/" element={<DogList />} />
+                <Route path="/dogs/:id" element={<DogDetail />} />
+                <Route path="/dogs/:id/edit" element={<EditDog />} /> {/* Edit route */}
+                <Route path="/add-dog" element={<AddDog />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,17 @@
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
